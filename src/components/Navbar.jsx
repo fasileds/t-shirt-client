@@ -17,6 +17,8 @@ const badgeStyle = {
 
 export default function Navbar() {
   const cart = useSelector((state) => state.cart);
+  const quantity = useSelector((state) => state.cart.totalQuantity);
+  console.log(quantity);
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -125,7 +127,7 @@ export default function Navbar() {
                     className="absolute -right-2 -top-2 flex items-center justify-center"
                     style={badgeStyle}
                   >
-                    <span className="text-xs">{cart.quantity}</span>
+                    <span className="text-xs">{quantity}</span>
                   </div>
                 </IconButton>
               </Link>
